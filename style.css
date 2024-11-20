@@ -1,0 +1,54 @@
+.frameContainer {
+    background-color: black;
+    height: 270px;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    background-color: white;
+    padding: 2px;
+    margin-bottom: 10px;
+    
+}
+
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+button {
+    background-color: lightgray;
+    flex: 1 1 45%;
+    margin: 2px;
+    padding: 2px;
+}
+
+.operators {
+    display: flex;
+    flex: 1 1 20%;
+    margin: 15px;
+}
+
+#add {
+    background-color: lightgreen;
+}
+
+#subtract {
+    background-color: lightcoral;
+}
+
+#multiply {
+    background-color: rgb(70, 127, 146);
+}
+
+#divide {
+    background-color: lightgoldenrodyellow;
+}
+
+#sum {
+    background-color: white;
+}
