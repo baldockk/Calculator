@@ -9,9 +9,9 @@
 
 #display {
     background-color: white;
-    padding: 2px;
+    padding: 5px;
     margin-bottom: 10px;
-    
+    font-weight: bold;
 }
 
 .numbers {

@@ -24,7 +24,8 @@ console.log(multiply(5, 3));
 
 /*Divides the first number by the second number*/
 function divide(num1, num2){
-    if(num2 === 0){
+    /*Handles the possibility of the user dividing something by zero*/
+    if(num2 === 0 && num1 != 0){
         return "infinite";
     }
     let sum = num1 / num2;
@@ -37,6 +38,7 @@ let fNum;
 let op;
 let lNum;
 
+/*Does the calculation based on the operator in the equation*/
 function operate(firstNum, operator, lastNum){
     let answer = 0;
     if(operator === "+"){
