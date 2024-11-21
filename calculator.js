@@ -81,15 +81,35 @@ buttons.forEach((button) => {
         clearData();
         display.textContent = "Try it out!";
     } else if(button.id === "="){
-        //Split the string in the input into the first number, the operator and the last number.
-        contentArray = splitEquationVars(displayText);
+        // Split the string in the input into numbers and operators
+    contentArray = splitEquationVars(displayText);
+
+    if (contentArray.length > 2) {
+        // Initialize runningTotal with the first number
+        let runningTotal = Number(contentArray[0]);
+
+        // Loop through the array, evaluating left-to-right
+        for (let i = 1; i < contentArray.length; i += 2) {
+            let op = contentArray[i]; // Operator
+            let nextNum = Number(contentArray[i + 1]); // Next number
+
+            // Operate on the running total and the next number
+            runningTotal = operate(runningTotal, op, nextNum);
+        }
+
+        // Display the final result
+        answer = runningTotal;
+        display.textContent = answer;
+    } else {
+        // Handle simple equations with one operator
         fNum = Number(contentArray[0]);
         op = contentArray[1];
         lNum = Number(contentArray[2]);
 
         answer = operate(fNum, op, lNum);
         display.textContent = answer;
-        clearData();
+    }
+    clearData();
     }
   });
 });
