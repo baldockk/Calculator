@@ -49,6 +49,8 @@ function operate(firstNum, operator, lastNum){
         answer = multiply(firstNum, lastNum);
     } else if(operator === "÷"){
         answer = divide(firstNum, lastNum);
+    } else if(operator === "clear"){
+        clearData();
     }
     return answer;
 }
@@ -111,7 +113,6 @@ buttons.forEach((button) => {
         answer = operate(fNum, op, lNum);
         display.textContent = answer;
     }
-    clearData();
     }
   });
 });
