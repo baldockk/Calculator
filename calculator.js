@@ -78,22 +78,28 @@ buttons.forEach((button) => {
         displayText += button.id;
         display.textContent = displayText;
     } else if(button.id === "clear"){
-        clearContent();
+        clearData();
+        display.textContent = "Try it out!";
     } else if(button.id === "="){
         //Split the string in the input into the first number, the operator and the last number.
         contentArray = splitEquationVars(displayText);
-        answer = operate(Number(contentArray[0]), contentArray[1], Number(contentArray[2]));
-        console.log(answer);
+        fNum = Number(contentArray[0]);
+        op = contentArray[1];
+        lNum = Number(contentArray[2]);
+
+        answer = operate(fNum, op, lNum);
+        display.textContent = answer;
+        clearData();
     }
   });
 });
 
-function clearContent(){
+/*Clears the data on the calculator so the user can do multiple equations*/
+function clearData(){
     displayText = "";
     fNum = "";
     lNum = "";
     op = "";
-    display.textContent = "Try it out!";
 }
 
 /*Splits the components of the display text into three variables. Returns an array of the three numbers*/
@@ -103,9 +109,8 @@ function splitEquationVars(displayContent){
     }
 
     let eqArray = new Array;
-    eqArray = displayContent.split(/[+\-x÷]/)
-
-    //Issue here is that the operator is not being extracted
+    //Splits the array by the operators, keeping the operators as an array item. E.g. arr[0] = 8, arr[1] = x, arr[2] = 7
+    eqArray = displayContent.split(/([+\-x÷])/)
 
     return eqArray;
 }
