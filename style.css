@@ -1,7 +1,7 @@
 .frameContainer {
     background-color: black;
-    height: 270px;
-    width: 300px;
+    height: 350px;
+    width: 300px;  
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -12,23 +12,33 @@
     padding: 5px;
     margin-bottom: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 .numbers {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; 
+    gap: 5px; 
 }
 
-button {
+.numbers button {
+    width: 20%; 
+    height: 60px; 
     background-color: lightgray;
-    flex: 1 1 45%;
-    margin: 2px;
+    margin: 0; 
     padding: 2px;
 }
 
-.operators {
+button.operators {
     display: flex;
-    flex: 1 1 20%;
-    margin: 15px;
+    gap: 10px; 
+    background-color: lightblue;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.equals{
+    background-color: orange;
 }
