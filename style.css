@@ -32,23 +32,3 @@ button {
     flex: 1 1 20%;
     margin: 15px;
 }
-
-#add {
-    background-color: lightgreen;
-}
-
-#subtract {
-    background-color: lightcoral;
-}
-
-#multiply {
-    background-color: rgb(70, 127, 146);
-}
-
-#divide {
-    background-color: lightgoldenrodyellow;
-}
-
-#sum {
-    background-color: white;
-}
